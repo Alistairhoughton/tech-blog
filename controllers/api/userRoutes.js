@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 // const withAuth = require("../../utils/auth");
 
-// =======================================
+// ======================================= Create new user
 
 // router.post("/", withAuth, async (req, res) => {
 router.post("/", async (req, res) => {
@@ -20,23 +20,21 @@ router.post("/", async (req, res) => {
   }
 });
 
-// ====================================
+// ==================================== Login Route
 
 router.post("/login", async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { username: req.body.username } });
+    const userData = await User.findOne({
+      where: { username: req.body.username },
+    });
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: "No user found" });
+      res.status(400).json({ message: "No user found" });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect password" });
+      res.status(400).json({ message: "Incorrect password" });
       return;
     }
 
@@ -50,6 +48,8 @@ router.post("/login", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+// ================================================== logout route
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
@@ -69,10 +69,7 @@ router.delete("/:id", async (req, res) => {
     res.status(200).json(userData);
   } catch (err) {
     res.status(500).json(err);
-  }  
+  }
 });
-
-
-
 
 module.exports = router;
