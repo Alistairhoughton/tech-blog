@@ -7,7 +7,7 @@ loginEl.addEventListener('click', async (event) => {
     event.preventDefault()
 
     const userNameEL = document.getElementById('user').value.trim()
-    const passWordEl
+    const passWordEl //finish this off. 
 
 
     if (userNameEL && passWordEl) {
@@ -25,7 +25,7 @@ loginEl.addEventListener('click', async (event) => {
         })
 
         if (res.ok) {
-            document.location.replace('/dash')
+            document.location.replace('/dashboard')
         } else {
             alert(res.statusText)
         }
