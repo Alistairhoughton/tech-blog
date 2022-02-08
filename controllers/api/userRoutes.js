@@ -1,5 +1,7 @@
+// copied from blog routes
+
 const router = require("express").Router();
-const { Blog } = require("../models");
+const { Blog } = require("../../models");
 
 // get all blogs
 router.get("/", async (req, res) => {
