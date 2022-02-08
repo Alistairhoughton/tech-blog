@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Blog } = require("../../models");
+// const withAuth = require("../../utils/auth");
 
 // get all blogs
 router.get("/", async (req, res) => {
@@ -20,6 +21,7 @@ router.get("/:id", async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
+
 
 // add a blog
 router.post("/", async (req, res) => {
