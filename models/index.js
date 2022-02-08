@@ -1,11 +1,11 @@
 const Blog = require("./Blog");
-const Blog = require("./User");
-const Blog = require("./Comment");
+const User = require("./User");
+const Comment = require("./Comment");
 
-User.hasMany(Blog, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE'
-  });
+// User.hasMany(Blog, {
+//     foreignKey: 'userId',
+//     onDelete: 'CASCADE'
+//   });
 
 //I think I need more?
 

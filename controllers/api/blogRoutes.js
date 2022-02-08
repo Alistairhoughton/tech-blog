@@ -22,7 +22,6 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-
 // add a blog
 router.post("/", async (req, res) => {
   try {
