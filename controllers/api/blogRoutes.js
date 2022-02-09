@@ -5,7 +5,7 @@ const { Blog } = require("../../models");
 // get all blogs
 router.get("/", async (req, res) => {
   try {
-    const blogs = (await Blog.findAll()).map(blog => blog.get({plain: true}));
+    const blogs = (await Blog.findAll({ include: ["comment"] })).map(blog => blog.get({plain: true}));
     res.render("blogs/blogs", {blogs})
   } catch (err) {
     res.sendStatus(500).send(err);

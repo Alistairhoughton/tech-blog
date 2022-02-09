@@ -8,7 +8,7 @@ loginEl.addEventListener('click', async (event) => {
     const passWordEl = document.getElementById('password-input').value.trim()
 
     if (userNameEL && passWordEl) {
-        const res = await fetch('/api/user/create/login', {
+        const res = await fetch('/api/user/login', {
             method: "POST",
             body: JSON.stringify({
                 username: userNameEL,

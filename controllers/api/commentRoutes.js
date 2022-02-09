@@ -4,14 +4,14 @@ const { Comment } = require("../../models");
 
 // ============================ get all comments 
 
-router.get("/", async (req, res) => {
-  try {
-    const comment = await Comment.findAll({}); 
-    res.status(200).json(comment);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+// router.get("/", async (req, res) => {
+//   try {
+//     const comment = await Comment.findAll({}); 
+//     res.status(200).json(comment);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // ========================= new comment
 
