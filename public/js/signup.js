@@ -1,6 +1,6 @@
 const signupEL = document.getElementById('sign-up-id');
 
-loginEl.addEventListener('click', async (event) => {
+signupEL.addEventListener('click', async (event) => {
 
     event.preventDefault()
 
@@ -8,7 +8,7 @@ loginEl.addEventListener('click', async (event) => {
     const passWordEl = document.getElementById('username-sign-up').value.trim()
 
     if (userNameEL && passWordEl) {
-        const res = await fetch('/api/userRoutes', {
+        const res = await fetch("/users", {
             method: "POST",
             body: JSON.stringify({
                 username: userNameEL,
@@ -19,7 +19,7 @@ loginEl.addEventListener('click', async (event) => {
         if (res.ok) {
             document.location.replace('/dashboard')
         } else {
-            alert(res.statusText)
+            
         }
     }
 });
