@@ -5,31 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tech Blog</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
 
   <body>
     <header>
-      <h1>Welcome to my blog</h1>
-    </header>
-    <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
+      <nav class="nav">
+      <a class="logo title animate__animated animate__zoomInDown animate__fast" href="/">Tech Blog</a>
+        <div>
+       <a href="/">Home</a>
+        {{#if loggedIn}}
+        <button id="logout" class="logout-button">Logout</button>
       {{else}}
         <a href="/login">Login</a>
       {{/if}}
-    </nav>
-    <main>
-      <aside>
-        <h2>Enjoy the galleries!</h2>
-      </aside>
-      <div class="gallery">
-        {{{body}}}
+      <a href="/dashboard">Dashboard</a>
       </div>
+    </nav>
+    <main class="holder">
+        {{{body}}}
     </main>
     {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
     {{/if}}
+
+    <footer class="footer">
+      <a class="footer-text" target=”_blank” href="https://github.com/Alistairhoughton">The Tech Blog Group <i class="far fa-copyright"></i></a>
+  </footer>
+      <script src="/js/logout.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </body>
 
 </html>

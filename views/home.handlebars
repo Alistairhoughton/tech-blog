@@ -1,1 +1,7 @@
-<h1>Hello</h1>
+<article class="blog-holder-main">
+
+    {{#each blogs as |blog| }}
+        {{> blog-info blog}}
+    {{/each}}
+
+</article>

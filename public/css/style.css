@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(221, 221, 221);;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(104, 104, 104) rgb(46, 46, 46);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  opacity: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(221, 221, 221);
+  opacity: 0;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(165, 165, 165);
+  border-radius: 60px;
+  border: rgba(255, 255, 255, 0);
+  opacity: 0;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+  padding-right: 30px;
+  color: rgb(3, 3, 3);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(220, 183, 255);
+}
+
+p {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.nav {
+  display: flex;
+  background-color: blueviolet;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 180px;
+  padding-bottom: 40px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.logout-button {
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding-right: 30px;
+  color: rgb(3, 3, 3);
+}
+
+.logo {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+}
+
+.holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: center;
+}
+
+.footer {
+  background-color: rgb(187, 187, 187);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.footer-text {
+  font-size: 1rem;
+}
+
+.test-block {
+  background-color: rgb(170, 162, 162);
+  height: 200px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.blog-link {
+  padding: 0px;
+}
+
+.blog-card {
+  height: auto;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.blog-header {
+  background-color: blueviolet;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0px;
+}
+
+.blog-body {
+  border-bottom: 2px solid blueviolet;
+  border-left: 2px solid blueviolet;
+  border-right: 2px solid blueviolet;
+  height: auto;
+  padding-left: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
+
+h3 {
+  margin: 0px;
+}
+
+h4 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.login-holder {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card * {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  border: none;
+  height: 20px;
+  background-color: rgb(184, 184, 184);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.btn {
+  border: none;
+  height: 30px;
+  background-color: rgb(255, 65, 65);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(255, 81, 81);
+}
+
+.login-link {
+  font-size: 10px;
+  text-decoration: underline;
+}
+
+.login-link:hover {
+  font-size: 10px;
+  text-decoration: underline;
+  color: blueviolet
+}
+
+/* 
+input[type=text]:focus {
+  border: none;
+} */
+
+input:focus, textarea:focus, select:focus {
+  outline-offset: 0px;
+  outline: none;
+  }
+
+  .blog-holder-main {
+    width: 100%;
+  }

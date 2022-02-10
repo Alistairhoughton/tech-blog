@@ -2,6 +2,16 @@ const router = require("express").Router();
 const { User } = require("../../models");
 // const withAuth = require("../../utils/auth");
 
+router.get("/", async (req, res) => {
+  try {
+    const userName = (await User.findAll()).map(user => user.get({plain: true})); 
+    res.render("home", { userName })
+    console.log(userName);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // ======================================= Create new user
 
 // router.post("/", withAuth, async (req, res) => {
