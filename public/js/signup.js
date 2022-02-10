@@ -1,14 +1,14 @@
-const loginEl = document.getElementById('login-button-id');
+const signupEL = document.getElementById('sign-up-id');
 
 loginEl.addEventListener('click', async (event) => {
 
     event.preventDefault()
 
-    const userNameEL = document.getElementById('username-input').value.trim()
-    const passWordEl = document.getElementById('password-input').value.trim()
+    const userNameEL = document.getElementById('username-sign-up').value.trim()
+    const passWordEl = document.getElementById('username-sign-up').value.trim()
 
     if (userNameEL && passWordEl) {
-        const res = await fetch('/api/users/login', {
+        const res = await fetch('/api/userRoutes', {
             method: "POST",
             body: JSON.stringify({
                 username: userNameEL,

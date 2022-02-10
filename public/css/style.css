@@ -87,7 +87,8 @@ p {
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  justify-content: center;
+  height: 100vh;
+  justify-content: flex-start;
 }
 
 .footer {
@@ -190,6 +191,7 @@ h4 {
   align-items: center;
   margin-top: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .btn:hover {
@@ -207,16 +209,21 @@ h4 {
   color: blueviolet
 }
 
-/* 
-input[type=text]:focus {
-  border: none;
-} */
-
 input:focus, textarea:focus, select:focus {
   outline-offset: 0px;
   outline: none;
+  background-color: rgb(184, 184, 184);
   }
 
   .blog-holder-main {
     width: 100%;
   }
+
+.dashboard-holder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 300px;
+}

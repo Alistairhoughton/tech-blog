@@ -20,7 +20,6 @@ router.get("/", async (req, res) => {
       include: [{ model: User }],
     })).map(blog => blog.get({plain: true}));
     res.render("home", { blogs })
-    console.log(blogs);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -41,6 +40,14 @@ router.get("/signup", async (req, res) => {
     res.sendStatus(500).send(err);
   }
 });
+
+// router.get("/dashboard", async (req, res) => {
+//   try {
+//     res.render("dashboard")
+//   } catch (err) {
+//     res.sendStatus(500).send(err);
+//   }
+// });
 
 
 

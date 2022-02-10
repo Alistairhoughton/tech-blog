@@ -4,9 +4,9 @@ const { User } = require("../../models");
 
 router.get("/", async (req, res) => {
   try {
-    const userName = (await User.findAll()).map(user => user.get({plain: true})); 
-    res.render("home", { userName })
-    console.log(userName);
+    const users = (await User.findAll()).map(user => user.get({plain: true})); 
+    res.render("home", { users })
+    console.log(users);
   } catch (err) {
     res.status(500).json(err);
   }

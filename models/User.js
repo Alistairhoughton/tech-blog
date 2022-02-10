@@ -26,7 +26,7 @@ User.init(
       allowNull: false,
       validate: {
         
-        len: [6]
+        len: [4]
     }
     }
 },
