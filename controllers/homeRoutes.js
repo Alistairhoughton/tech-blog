@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     const blogs = (await Blog.findAll({
       include: [{ model: User }],
     })).map(blog => blog.get({plain: true}));
-    res.render("home", { blogs })
+    res.render("home", { blogs, logged_in: req.session.logged_in })
   } catch (err) {
     res.status(500).json(err);
   }
@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
 
 router.get("/login", async (req, res) => {
     try {
-      res.render("login")
+      res.render("login", { logged_in: req.session.logged_in })
     } catch (err) {
       res.sendStatus(500).send(err);
     }
@@ -35,7 +35,7 @@ router.get("/login", async (req, res) => {
 
 router.get("/signup", async (req, res) => {
   try {
-    res.render("signup")
+    res.render("signup", { logged_in: req.session.logged_in } )
   } catch (err) {
     res.sendStatus(500).send(err);
   }
@@ -43,7 +43,7 @@ router.get("/signup", async (req, res) => {
 
 router.get("/dashboard", async (req, res) => {
   try {
-    res.render("dashboard")
+    res.render("dashboard", { logged_in: req.session.logged_in } )
   } catch (err) {
     res.sendStatus(500).send(err);
   }
@@ -51,7 +51,7 @@ router.get("/dashboard", async (req, res) => {
 
 router.get("/newpost", async (req, res) => {
   try {
-    res.render("newpost")
+    res.render("newpost", { logged_in: req.session.logged_in } )
   } catch (err) {
     res.sendStatus(500).send(err);
   }

@@ -12,7 +12,7 @@ const withAuth = require('../utils/auth')
 router.get("/", async (req, res) => {
     try {
       const users = (await User.findAll()).map(user => user.get({plain: true})); 
-      res.render("dashboard", { users })
+      res.render("dashboard", { users, logged_in: req.session.logged_in })
       console.log(users);
     } catch (err) {
       res.status(500).json(err);
