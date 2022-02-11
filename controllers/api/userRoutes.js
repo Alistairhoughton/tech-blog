@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       password: req.body.password,
     });
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.logged_in = true;
       req.session.user_id = userData.id
       res.status(200).json(userData);
     });
@@ -34,6 +34,7 @@ router.post("/", async (req, res) => {
 // ==================================== Login Route
 
 router.post("/login", async (req, res) => {
+
   try {
     const userData = await User.findOne({
       where: { username: req.body.username },
@@ -52,6 +53,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
+      console.log(req.session.logged_in);
 
       res.json({ user: userData, message: "You are now logged in!" });
     });
@@ -66,6 +68,7 @@ router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
+      console.log("logged out of session");
     });
   } else {
     res.status(404).end();

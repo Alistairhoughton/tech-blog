@@ -14,9 +14,9 @@
       <a class="logo" href="/">Tech Blog</a>
         <div>
        <a href="/">Home</a>
-        {{#if loggedIn}}
-        <button id="logout" class="logout-button">Logout</button>
+      {{#if logged_in}}
       {{else}}
+        <button id="logout-button" class="logout-button">Logout</button>
         <a href="/login">Login</a>
       {{/if}}
       <a href="/dashboard">Dashboard</a>
@@ -25,14 +25,15 @@
     <main class="holder">
         {{{body}}}
     </main>
-    {{#if loggedIn}}
-    {{/if}}
+    
 
     <footer class="footer">
       <a class="footer-text" target=”_blank” href="https://github.com/Alistairhoughton">The Tech Blog Group <i class="far fa-copyright"></i></a>
   </footer>
-      {{!-- <script src="/js/logout.js"></script> --}}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </body>
+      <script src="/js/logout.js"></script>
 
 </html>
+
+                    

@@ -8,7 +8,7 @@ loginEl.addEventListener('click', async (event) => {
     const passWordEl = document.getElementById('password-input').value.trim()
 
     if (userNameEL && passWordEl) {
-        const res = await fetch('/api/users/login', {
+        const res = await fetch('/users/login', {
             method: "POST",
             body: JSON.stringify({
                 username: userNameEL,
@@ -17,9 +17,10 @@ loginEl.addEventListener('click', async (event) => {
             headers: { 'Content-Type': 'application/json' }
         })
         if (res.ok) {
-            document.location.replace('/dashboard')
+            document.location.replace('/dashboard');
+            alert("Login successful");
         } else {
-            alert(res.statusText)
+            alert("Password or username are incorrect. Please try again");
         }
     }
 });

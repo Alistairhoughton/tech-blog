@@ -6,7 +6,7 @@ const router = require('express').Router();
 
 // router.get("/", async (req, res) => {
 //     try {
-//       res.render("home")
+//       res.render("newpost")
 //     } catch (err) {
 //       res.sendStatus(500).send(err);
 //     }
@@ -41,14 +41,21 @@ router.get("/signup", async (req, res) => {
   }
 });
 
-// router.get("/dashboard", async (req, res) => {
-//   try {
-//     res.render("dashboard")
-//   } catch (err) {
-//     res.sendStatus(500).send(err);
-//   }
-// });
+router.get("/dashboard", async (req, res) => {
+  try {
+    res.render("dashboard")
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
 
+router.get("/newpost", async (req, res) => {
+  try {
+    res.render("newpost")
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
 
 
 module.exports = router

@@ -12,6 +12,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Works on Firefox */
@@ -22,7 +23,7 @@ body {
 
 /* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
   opacity: 0;
 }
 
@@ -55,6 +56,26 @@ p {
   font-size: 2rem;
 }
 
+textarea {
+  resize: none;
+}
+
+.logout-button {
+  text-decoration: none;
+  font-size: 1rem;
+  color: rgb(3, 3, 3);
+  border: none;
+  background-color: transparent;
+  padding-right: 30px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  text-decoration: none;
+  color: rgb(220, 183, 255);
+}
+
 .nav {
   display: flex;
   background-color: blueviolet;
@@ -69,13 +90,6 @@ p {
   margin-bottom: 10px;
 }
 
-.logout-button {
-  text-decoration: none;
-  font-size: 1.2rem;
-  padding-right: 30px;
-  color: rgb(3, 3, 3);
-}
-
 .logo {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
@@ -88,6 +102,7 @@ p {
   padding-left: 10%;
   padding-right: 10%;
   height: auto;
+  min-height: 63.7vh;
   justify-content: flex-start;
 }
 
@@ -179,6 +194,15 @@ h4 {
   border-radius: 5px;
 }
 
+.blog-form-input {
+  border: none;
+  width: 800px;
+  height: 200px;
+  background-color: rgb(184, 184, 184);
+  padding: 20px;
+  border-radius: 5px;
+}
+
 .btn {
   border: none;
   height: 30px;
@@ -192,10 +216,12 @@ h4 {
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
+  font-family: "Roboto", sans-serif;
 }
 
+
 .btn:hover {
-  background-color: rgb(255, 81, 81);
+  background-color: rgb(252, 97, 97);
 }
 
 .login-link {
