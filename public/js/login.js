@@ -17,8 +17,9 @@ loginEl.addEventListener('click', async (event) => {
             headers: { 'Content-Type': 'application/json' }
         })
         if (res.ok) {
+            // alert("Login successful");
+            location.reload();
             document.location.replace('/dashboard');
-            alert("Login successful");
         } else {
             alert("Password or username are incorrect. Please try again");
         }

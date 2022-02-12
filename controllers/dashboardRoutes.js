@@ -45,7 +45,7 @@ router.get("/", async (req, res) => {
             }
         ]
     })).map(user => user.get({plain: true}));
-    res.render('dashboard', { posts })
+    res.render('dashboard', { posts, logged_in: req.session.logged_in  })
     } catch (err) {
         res.status(500).json(err);
     }
