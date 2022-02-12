@@ -1,10 +1,17 @@
 <div class="dashboard-holder">
 
- {{#each blogs as |blog| }}
-        {{> blog-info blog}}
+  <div class="blogs">
+    <p class="update-blogs">Here you can manage your blogs</p>
+    {{#each blogs }}
+
+    <a href="/edit-blog/{{id}}">
+      <div class="blog-block">
+        <div class="update-blog-title">{{this.title}}</div>
+        <div class="update-blog-date">{{format_date createdAt}}</div>
+      </div>
+    </a>
     {{/each}}
 
-  <h1> {{ user.username }}</h1>
-  <a href="dashboard/newpost" class="btn">New post</a>
+  </div>
+    <a href="dashboard/newpost" class="btn newpost-btn">New post</a>
 </div>
-
