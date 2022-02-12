@@ -1,4 +1,10 @@
 <div class="dashboard-holder">
-  <a href="/newpost" class="btn">New post</a>
+
+ {{#each blogs as |blog| }}
+        {{> blog-info blog}}
+    {{/each}}
+
+  <h1> {{ user.username }}</h1>
+  <a href="dashboard/newpost" class="btn">New post</a>
 </div>
 

@@ -1,76 +1,91 @@
-// if not logged in show log in page? 
-//if logged in show add post button. 
-//add post button brings up form of title and content. 
-// if there is already a post, also has a update button
-
-const sequelize = require('../config/connection');
-const { Blog, User, Comment } = require('../models');
-const router = require('express').Router();
-const withAuth = require('../utils/auth')
-
+const { Blog, User, Comment } = require("../models");
+const router = require("express").Router();
+const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
     try {
-      const users = (await User.findAll()).map(user => user.get({plain: true})); 
-      res.render("dashboard", { users, logged_in: req.session.logged_in })
-      console.log(users);
+      const blogs = (await Blog.findAll({
+        where: {
+            user_id: req.session.user_id,
+          },
+        include: [{ model: User }],
+      })).map(blog => blog.get({plain: true}));
+      res.render("dashboard", { blogs, logged_in: req.session.logged_in })
     } catch (err) {
       res.status(500).json(err);
     }
   });
 
-router.get("/", async (req, res) => {
+  router.get("/newpost", async (req, res) => {
     try {
-    const userPosts = (await Blog.findAll({
-        where: {
-            user_id: req.session.id
-        },
-        attributes: [
-            'id',
-            'title',
-            'content',
-            'created_at'
-        ],
-        include: [{
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    })).map(user => user.get({plain: true}));
-    res.render('dashboard', { posts, logged_in: req.session.logged_in  })
+      res.render("newpost", { logged_in: req.session.logged_in } )
     } catch (err) {
-        res.status(500).json(err);
+      res.sendStatus(500).send(err);
     }
-});
-
-
-
-//   res.render('dashboard', { posts, loggedIn: true });
-
-
-
-
-
+  });
 
 module.exports = router;
 
 
+// router.get("/", async (req, res) => {
+//     try {
+  //       const users = (await User.findAll()).map(user => user.get({plain: true}));
+  //       res.render("dashboard", { users, logged_in: req.session.logged_in })
+//       console.log(users);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
+// router.get("/get", async (req, res) => {
+//   try {
+//     const blogs = (
+//       await Blog.findAll({
+//         where: {
+//           user_id: req.session.user_id,
+//         },
+//         attributes: ["id", "title", "content", "created_at"],
+//         include: [
+//           {
+//             model: Comment,
+//             attributes: [
+//               "id",
+//               "comment_text",
+//               "post_id",
+//               "user_id",
+//               "created_at",
+//             ],
+//           },
+//           {
+//             model: User,
+//             attributes: ["username"],
+//           },
+//         ],
+//       })
+//     ).map((blog) => blog.get({ plain: true }));
+//     res.render("dashboard", { blogs, logged_in: req.session.logged_in });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
+// testing data =====================================
 
+// router.get("/get", async (req, res) => {
+//     try {
+//       const blogData = (await Blog.findAll({
+//         where: {
+//             user_id: req.session.user_id,
+//           }
+//         })).map((blog) =>
+//         blog.get({ plain: true })
+//         );
+//         console.log(req.session.user_id);
+//       res.status(200).json(blogData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
 
-
-
-
-
-
-
+//   ================================================================
 

@@ -1,16 +1,14 @@
-const postEl = document.getElementById("new-post-button");
+const postEl = document.getElementById("new-blog-form");
 
 postEl.addEventListener("submit", async (event) => {
   event.preventDefault();
+  console.log("button pressed");
 
   const titleEl = document.getElementById("blog-title-input").value.trim();
   const contentEL = document.getElementById("blog-content-area").value.trim();
 
-  //   const title = document.querySelector('input[name="post-title"]').value;
-  //   const body = document.querySelector('textarea[name="post-body"]').value;
-
-  if (titleEl && contentEL) {
-    const res = await fetch("/blogs", {
+    if (titleEl && contentEL) {
+    const res = await fetch("/blogs/", {
       method: "POST",
       body: JSON.stringify({
         title: titleEl,
@@ -19,8 +17,10 @@ postEl.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (res.ok) {
+      // alert("post successful");
       document.location.replace("/dashboard");
     } else {
+      alert("post failed");
       res.statusText;
     }
   }

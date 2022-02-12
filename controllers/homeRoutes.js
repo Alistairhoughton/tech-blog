@@ -42,21 +42,8 @@ router.get("/signup", async (req, res) => {
   }
 });
 
-router.get("/dashboard", withAuth, async (req, res) => {
-  try {
-    res.render("dashboard", { logged_in: req.session.logged_in } )
-  } catch (err) {
-    res.sendStatus(500).send(err);
-  }
-});
 
-router.get("/newpost", async (req, res) => {
-  try {
-    res.render("newpost", { logged_in: req.session.logged_in } )
-  } catch (err) {
-    res.sendStatus(500).send(err);
-  }
-});
+
 
 
 module.exports = router

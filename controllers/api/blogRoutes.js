@@ -5,7 +5,7 @@ const { Blog, User } = require("../../models");
 // ==================working get request
 
 
-router.get("/getblogs/getblogs", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const blogData = (await Blog.findAll()).map((blog) =>
       blog.get({ plain: true })
@@ -18,17 +18,33 @@ router.get("/getblogs/getblogs", async (req, res) => {
 
 // ======================================= working post request
 
+// router.post("/", async (req, res) => {
+//   try {
+//     const newBlog = await Blog.create(req.body);
+//     res.json(newBlog);
+//     console.log("posted from insomnia");
+//   } catch (err) {
+//     console.error(err);
+//     res.sendStatus(500).send(err);
+//   }
+// });
+
+// ============================================ post with user ID from the form
+
 router.post("/", async (req, res) => {
   try {
-    const newBlog = await Blog.create(req.body);
-    res.json(newBlog);
+    const newBlog = await Blog.create({
+          title: req.body.title,
+          content: req.body.content,
+          user_id: req.session.user_id
+        });
+        res.json(newBlog);
+        console.log("this is posting from the user");
   } catch (err) {
     console.error(err);
     res.sendStatus(500).send(err);
   }
 });
-
-
 
 // =======================================
 // router.get("/", async (req, res) => {

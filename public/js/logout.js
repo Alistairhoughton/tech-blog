@@ -11,7 +11,7 @@ logoutEl.addEventListener('click', async (event) => {
         })
         if (res.ok) {
             document.location.replace('/');
-            alert("Logout Successful");
+            // alert("Logout Successful");
         } else {
             alert("logout failed");
         }

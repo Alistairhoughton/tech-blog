@@ -4,8 +4,10 @@ const withAuth = require("../../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const users = (await User.findAll()).map(user => user.get({plain: true})); 
-    res.render("home", { users })
+    const users = (await User.findAll()).map((user) =>
+      user.get({ plain: true })
+    );
+    res.render("home", { users });
     console.log(users);
   } catch (err) {
     res.status(500).json(err);
@@ -23,7 +25,7 @@ router.post("/", async (req, res) => {
     });
     req.session.save(() => {
       req.session.logged_in = true;
-      req.session.user_id = userData.id
+      req.session.user_id = userData.id;
       res.status(200).json(userData);
     });
   } catch (err) {
@@ -34,7 +36,6 @@ router.post("/", async (req, res) => {
 // ==================================== Login Route
 
 router.post("/login", async (req, res) => {
-
   try {
     const userData = await User.findOne({
       where: { username: req.body.username },
@@ -54,6 +55,7 @@ router.post("/login", async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       console.log(req.session.logged_in);
+      console.log(userData);
       console.log("logged into session as true");
 
       res.json({ user: userData, message: "You are now logged in!" });
@@ -72,7 +74,7 @@ router.post("/logout", (req, res) => {
       console.log("logged out of session");
     });
   } else {
-    res.status(404).end();
+    res.status(404).json(err);
   }
 });
 
