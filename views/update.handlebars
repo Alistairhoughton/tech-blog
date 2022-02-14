@@ -1,0 +1,31 @@
+<div class="login-holder">
+  <div class="login-card">
+    <form id="new-blog-form" class="login-card" action="">
+      <label for="blog-title-input"></label>
+      <input
+        id="blog-title-update-input"
+        type="text"
+        autofocus="true"
+        class="form-input"
+        placeholder="Blog title"
+        name="blog-title"
+        value="{{this.title}}"
+      />
+      <label class="form-label" for="blog-content-input"></label>
+      <textarea
+        class="blog-form-input"
+        name="blog-content"
+        id="blog-content-update-input"
+        cols="30"
+        rows="10"
+      >{{this.content}}</textarea>
+
+      <button id="update-blog-button" type="click" class="btn update-btn">Update</button>
+      <button id="delete-button" type="click" class="btn">Delete</button>
+    </form>
+  </div>
+</div>
+
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>
+

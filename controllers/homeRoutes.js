@@ -43,7 +43,26 @@ router.get("/signup", async (req, res) => {
 });
 
 
+router.get("/main/:id", async (req, res) => {
+  try {
+    const blog = (await Blog.findByPk(req.params.id));
+    res.status(200).json(blog);
+    res.render("single-blog", { ...blog, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.sendStatus(500).send(err);
+  }
+});
 
 
+// ------------------- data 
+
+// router.get("/main/:id", async (req, res) => {
+//   try {
+//     const blog = (await Blog.findByPk(req.params.id));
+//     res.status(200).json(blog);
+//   } catch (err) {
+//     res.sendStatus(500).send(err);
+//   }
+// });
 
 module.exports = router

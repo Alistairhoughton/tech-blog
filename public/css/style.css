@@ -108,7 +108,7 @@ li {
   padding-left: 10%;
   padding-right: 10%;
   height: auto;
-  min-height: 63.7vh;
+  min-height: 64.9vh;
   justify-content: flex-start;
 }
 
@@ -310,4 +310,12 @@ input:focus, textarea:focus, select:focus {
 
 .update-blog-date {
   padding-right: 20px;
+}
+
+.update-btn {
+  background-color: rgb(76, 197, 76);
+}
+
+.update-btn:hover {
+  background-color: rgb(84, 214, 84);
 }
