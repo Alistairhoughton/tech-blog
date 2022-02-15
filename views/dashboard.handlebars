@@ -4,14 +4,19 @@
     <p class="update-blogs">Here you can manage your blogs</p>
     {{#each blogs }}
 
+<div class="organiser">
     <a href="dashboard/update/{{id}}">
       <div class="blog-block">
         <div class="update-blog-title">{{this.title}}</div>
         <div class="update-blog-date">{{format_date createdAt}}</div>
       </div>
     </a>
+    <button id="delete-button-two" type="click" class="delete-btn-2"><i class="fa-solid fa-trash-can"></i></button>
+    </div>
     {{/each}}
 
   </div>
     <a href="dashboard/newpost" class="btn newpost-btn">New post</a>
 </div>
+
+<script src="/js/delete2.js"></script>

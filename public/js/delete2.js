@@ -1,6 +1,6 @@
-const deleteEL = document.getElementById("delete-button");
+const deleteElTwo = document.getElementById("delete-button-two");
 
-deleteEL.addEventListener("click", async (event) => {
+deleteElTwo.addEventListener("click", async (event) => {
   event.preventDefault();
   const id = window.location.toString().split("/").pop();
 
@@ -16,5 +16,3 @@ deleteEL.addEventListener("click", async (event) => {
     alert("delete failed");
   }
 });
-
-

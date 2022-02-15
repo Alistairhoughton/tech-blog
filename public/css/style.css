@@ -275,16 +275,19 @@ input:focus, textarea:focus, select:focus {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: blueviolet;
+  background-color: rgb(184, 184, 184);
   width: 100%;
   height: 40px;
   border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   cursor: pointer;
  
 }
 
 .blog-block:hover {
-  background-color: rgb(178, 99, 252);
+  background-color: rgb(201, 201, 201);
+  color: black;
 
 }
 
@@ -298,9 +301,11 @@ input:focus, textarea:focus, select:focus {
   padding: 0px;
   height: 40px;
   margin-top: 20px;
+  background-color: rgb(76, 197, 76);
 }
 
 .newpost-btn:hover{
+  background-color: rgb(84, 214, 84);
   color: rgba(15, 14, 14, 0.521);
 }
 
@@ -318,4 +323,66 @@ input:focus, textarea:focus, select:focus {
 
 .update-btn:hover {
   background-color: rgb(84, 214, 84);
+}
+
+.organiser {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.organiser > a {
+ width: 100%;
+ margin: 0px;
+ padding: 0px;
+ margin-bottom: 20px;
+}
+
+
+.delete-btn-2 {
+  border: none;
+  height: 40px;
+  background-color: rgb(255, 65, 65);
+  padding: 10px;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.delete-btn-2:hover {
+  background-color: rgb(252, 97, 97);
+}
+
+.comment-holder {
+  width: 100%;
+}
+
+.comment-card {
+  width: 100%;
+  background-color: rgb(192, 192, 192);
+  border-radius: 10px;
+}
+
+.comment-body {
+  padding: 20px;
+  font-size: 1rem;
+}
+
+.comment-footer {
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  background-color: rgb(206, 206, 206);;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }

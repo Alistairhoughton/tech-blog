@@ -1,9 +1,11 @@
 <div class="blog-card">
     <div class="blog-header">
-        <a href="main/{{ id }}"><h3>{{ title }}</h3></a>
+        <a href="main/{{id}}"><h3>{{ title }}</h3></a>
         <h4></h4>Posted by {{ user.username }} on {{ format_date createdAt }}</p>
     </div>
     <p class="blog-body">
        {{ content }}
     </p>
 </div>
+
+{{> comments }}
