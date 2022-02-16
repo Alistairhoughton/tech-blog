@@ -42,15 +42,40 @@ router.get("/signup", async (req, res) => {
   }
 });
 
+// ==========================================/ with comments
 
 router.get("/main/:id", async (req, res) => {
   try {
-    const blog = (await Blog.findByPk(req.params.id)).get({plain: true});
+    const blog = (
+      await Blog.findOne({
+        where: { id: req.params.id },
+        attributes: ["id", "title", "content", "createdAt"],
+        include: [
+          {
+            model: Comment,
+            attributes: [
+              "id",
+              "comment_text",
+              "user_id",
+              "blog_id",
+              "createdAt",
+            ],
+            include: { model: User, attributes: ["username"] },
+          },
+          { model: User, attributes: ["username"] },
+        ],
+      })
+    ).get({ plain: true });
+    res.render("single-blog", { ...blog, loggedIn: req.session.loggedIn });
     // res.status(200).json(blog);
-    res.render("single-blog", { ...blog, logged_in: req.session.logged_in });
   } catch (err) {
-    res.sendStatus(500).send(err);
+    res.status(500).send(err);
   }
 });
 
+// =================================================
+
 module.exports = router
+
+
+

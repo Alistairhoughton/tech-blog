@@ -3,7 +3,7 @@ const deleteElTwo = document.getElementById("delete-button-two");
 
 deleteElTwo.addEventListener("click", async (event) => {
   event.preventDefault();
-  const id = document.getElementById("id-select-span").textContent;
+  const id = document.querySelector(".id-select-span").textContent;
 
   const res = await fetch(`/blogs/${id}`, {
     method: "DELETE",

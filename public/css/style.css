@@ -5,7 +5,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-  background-color: rgb(221, 221, 221);;
+  background-color: rgb(221, 221, 221);
 }
 
 body {
@@ -63,7 +63,7 @@ textarea {
 }
 
 li {
-  list-style: none; 
+  list-style: none;
 }
 
 .logout-button {
@@ -88,8 +88,8 @@ li {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 13%;
+  padding-right: 13%;
   height: 180px;
   padding-bottom: 40px;
   width: auto;
@@ -123,6 +123,7 @@ li {
 
 .footer-text {
   font-size: 1rem;
+  padding: 0px;
 }
 
 .test-block {
@@ -187,9 +188,6 @@ h4 {
   flex-direction: column;
   margin-top: 5px;
   margin-bottom: 5px;
-
-  
-  
 }
 
 .login-card * {
@@ -230,7 +228,6 @@ h4 {
   font-family: "Roboto", sans-serif;
 }
 
-
 .btn:hover {
   background-color: rgb(252, 97, 97);
 }
@@ -243,18 +240,20 @@ h4 {
 .login-link:hover {
   font-size: 10px;
   text-decoration: underline;
-  color: blueviolet
+  color: blueviolet;
 }
 
-input:focus, textarea:focus, select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   outline-offset: 0px;
   outline: none;
   background-color: rgb(184, 184, 184);
-  }
+}
 
-  .blog-holder-main {
-    width: 100%;
-  }
+.blog-holder-main {
+  width: 100%;
+}
 
 .dashboard-holder {
   width: 100%;
@@ -282,13 +281,11 @@ input:focus, textarea:focus, select:focus {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   cursor: pointer;
- 
 }
 
 .blog-block:hover {
   background-color: rgb(201, 201, 201);
   color: black;
-
 }
 
 .update-blogs {
@@ -304,7 +301,7 @@ input:focus, textarea:focus, select:focus {
   background-color: rgb(76, 197, 76);
 }
 
-.newpost-btn:hover{
+.newpost-btn:hover {
   background-color: rgb(84, 214, 84);
   color: rgba(15, 14, 14, 0.521);
 }
@@ -334,12 +331,11 @@ input:focus, textarea:focus, select:focus {
 }
 
 .organiser > a {
- width: 100%;
- margin: 0px;
- padding: 0px;
- margin-bottom: 20px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
 }
-
 
 .delete-btn-2 {
   border: none;
@@ -359,17 +355,20 @@ input:focus, textarea:focus, select:focus {
 
 .comment-holder {
   width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .comment-card {
   width: 100%;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(209, 209, 209);
   border-radius: 10px;
 }
 
 .comment-body {
   padding: 20px;
   font-size: 1rem;
+  border-bottom: 1px solid rgb(167, 167, 167);
 }
 
 .comment-footer {
@@ -382,9 +381,10 @@ input:focus, textarea:focus, select:focus {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 14px;
-  background-color: rgb(206, 206, 206);;
+  background-color: rgb(202, 202, 202);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  color: black;
 }
 
 .login-btn {
@@ -395,6 +395,6 @@ input:focus, textarea:focus, select:focus {
   background-color: rgb(84, 214, 84);
 }
 
-#id-select-span {
+.id-select-span {
   display: none;
 }

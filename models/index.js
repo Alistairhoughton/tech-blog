@@ -30,7 +30,8 @@ User.hasMany(Comment, {
 Blog.hasMany(Comment, {
   foreignKey: 'blog_id',
   onDelete: "cascade"
-})
+});
+
 
 
 module.exports = {Blog, Comment, User};
