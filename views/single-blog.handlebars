@@ -18,16 +18,18 @@
       <textarea
         class="comment-form-input"
         name="blog-content"
-        id="blog-content-area"
+        id="comment-form-input"
         cols="30"
         rows="10"
         placeholder="Enter your comment here"
       ></textarea>
 
-      <button id="add-comment-btn-id" type="submit" class="btn comment-btn">Add Comment</button>
+      <button id="add-comment-btn-id" type="click" class="btn comment-btn">Add Comment</button>
     </form>
       {{else}}
       <div class="login-btn-holder">
         <a class="btn login-comment-btn" href="/login">Login to comment</a>
         </div>
       {{/if}}
+
+<script src="/js/comment.js"></script>
