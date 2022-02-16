@@ -17,7 +17,7 @@ postEl.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (res.ok) {
-      alert("post successful");
+      // alert("post successful");
       document.location.replace("/dashboard");
     } else {
       alert("post failed");
