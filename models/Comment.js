@@ -13,9 +13,6 @@ Comment.init(
     },
     comment_text: {
       type: DataTypes.STRING,
-      validate: {
-        len: [3],
-      },
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -40,7 +37,19 @@ Comment.init(
     freezeTableName: true,
     underscored: true,
     modelName: "comment",
-  }
-);
+  });
+
+
+// Comment.init(
+//   {
+//     body: DataTypes.STRING
+//   },
+//   {
+//     sequelize,
+//     timestamps: true,
+//     freezeTableName: true,
+//     underscored: true,
+//     modelName: "comment",
+//   });
 
 module.exports = Comment;
