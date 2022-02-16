@@ -398,3 +398,55 @@ select:focus {
 .id-select-span {
   display: none;
 }
+
+#new-comment-form {
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1.1px rgb(170, 170, 170) solid;
+  margin-bottom: 40px;
+}
+.comment-form-input {
+  border: none;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(184, 184, 184);
+  padding: 20px;
+  border-radius: 5px;
+ 
+}
+
+.add-comment {
+  text-align: center
+}
+
+.comment-btn {
+  background-color: rgb(76, 197, 76);
+}
+
+.comment-btn:hover {
+  background-color: rgb(84, 214, 84);
+}
+
+.login-btn-holder {
+  width: 100%;
+  border-top: 1.1px rgb(170, 170, 170) solid;
+  padding-top: 10px;
+  margin-top: 10px;
+  /* margin-right: 88%; */
+}
+
+.login-comment-btn {
+  background-color: rgb(76, 197, 76);
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.login-comment-btn:hover {
+  background-color: rgb(84, 214, 84);
+  color: black;
+}
+

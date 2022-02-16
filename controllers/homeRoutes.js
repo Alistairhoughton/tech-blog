@@ -66,7 +66,7 @@ router.get("/main/:id", async (req, res) => {
         ],
       })
     ).get({ plain: true });
-    res.render("single-blog", { ...blog, loggedIn: req.session.loggedIn });
+    res.render("single-blog", { ...blog, logged_in: req.session.logged_in });
     // res.status(200).json(blog);
   } catch (err) {
     res.status(500).send(err);

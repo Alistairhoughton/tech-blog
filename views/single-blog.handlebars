@@ -12,3 +12,22 @@
         {{> comments comment }}
     {{/each}}
 
+{{#if logged_in}}
+         <form id="new-comment-form" class="" action="">
+      <label class="form-label" for="comment-form-input"></label>
+      <textarea
+        class="comment-form-input"
+        name="blog-content"
+        id="blog-content-area"
+        cols="30"
+        rows="10"
+        placeholder="Enter your comment here"
+      ></textarea>
+
+      <button id="add-comment-btn-id" type="submit" class="btn comment-btn">Add Comment</button>
+    </form>
+      {{else}}
+      <div class="login-btn-holder">
+        <a class="btn login-comment-btn" href="/login">Login to comment</a>
+        </div>
+      {{/if}}
