@@ -2,6 +2,8 @@ const { Blog, User, Comment } = require("../models");
 const router = require("express").Router();
 const withAuth = require("../utils/auth");
 
+// ================================================find all blogs related to user ID. 
+
 router.get("/", withAuth, async (req, res) => {
     try {
       const blogs = (await Blog.findAll({
@@ -16,6 +18,7 @@ router.get("/", withAuth, async (req, res) => {
     }
   });
 
+  // ============================================= render newpost page
  
   router.get("/newpost", withAuth, async (req, res) => {
     try {
@@ -35,7 +38,7 @@ router.get("/", withAuth, async (req, res) => {
     }
 });
 
-  //=======================================================
+  //======================================================= render update page by:id
 
 
   router.get("/update/:id", withAuth, async (req, res) => {

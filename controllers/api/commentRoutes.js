@@ -37,24 +37,5 @@ router.post("/", async (req, res) => {
 
 // =================================
 
-
-
-// router.post("/",  async (req, res) => {
-
-//     try {
-//       const newComment = await Comment.create({
-//       })
-      
-//       res.status(200).json(newComment);
-//       console.log(newComment);
-//     } catch (err) {
-//       console.log(err);
-//       res.status(508).json(err);
-//     }
-    
-// });
-
-
-
 module.exports = router;
 
