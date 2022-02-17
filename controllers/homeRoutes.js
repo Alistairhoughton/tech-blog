@@ -18,7 +18,7 @@ const withAuth = require("../utils/auth");
 router.get("/", async (req, res) => {
   try {
     const blogs = (await Blog.findAll({
-      include: [{ model: User }],
+      include: [{ model: User }, { model: Comment}],
     })).map(blog => blog.get({plain: true}));
     res.render("home", { blogs, logged_in: req.session.logged_in })
   } catch (err) {
